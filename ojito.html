@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>◉</title>
+    <link rel="icon" href="https://www.emojiall.com/images/60/blobmoji/emoji_u1f53c.png" />
+    <!-- fancy -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=WindSong&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: black;
+            color: #b90048;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            height: 30px;
+            margin: 50px;
+            color: #b90048;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            padding: 5px;
+            margin: 10px;
+            background: transparent;
+            color: #b9004742;
+            font-family: 'WindSong', cursive;
+            font-size: 10px;
+            font-weight: bolder;
+            border-radius: 10%;
+            box-shadow: 2px 2px 3px 0px #b900477e;
+            transition: all 2s;
+        }
+
+        button:hover {
+            color: #b90048;
+            ;
+            box-shadow: -3px -3px 3px 0px #b90048;
+        }
+
+        .margin {
+            margin: 100px;
+        }
+
+        #n {
+            height: 50vw;
+            overflow: hidden;
+        }
+    </style>
+    <!-- fancy -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+    <div>
+        <a data-fancybox data-type="iframe"
+            href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5730.795587233944!2d-116.8511921777349!3d37.62898146003537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x27bce0af5040a520!2zMzfCsDM3JzQ2LjQiTiAxMTbCsDUwJzU4LjQiVw!5e1!3m2!1ses!2scl!4v1652237081661!5m2!1ses!2scl">
+            <button>ver mapa</button>
+        </a>
+        <a data-fancybox data-type="iframe" data-preload="false" href="https://www.youtube.com/embed/AQsXbJSYj6o">
+            <button>ver video</button>
+        </a>
+    </div>
+
+    <div class="margin">
+        <a id="ah" data-fancybox data-caption=""
+            href="https://cdn.discordapp.com/attachments/749453565571104791/973757438425726976/ojitosg.gif">
+            <img class="rounded" style="border-radius: 100%"
+                src="https://cdn.discordapp.com/attachments/749453565571104791/973757438899658804/ojitosp.png" id="ojo"
+                onmouseenter="remp()" onmouseleave="remp2()" />
+        </a>
+    </div>
+
+    <h1 id="t"></h1>
+    <p id="n"></p>
+
+
+
+
+    <!-- estos porque me da miedo que tire error si no hay un elemento con el nombre de la clase -->
+    <div style="display:none">
+        <div class="fancybox__caption"> Aeiou afwf aw </div>
+    </div>
+
+
+
+    <script>
+
+        function remp() {
+            document.getElementById("ojo").setAttribute("src", "https://cdn.discordapp.com/attachments/749453565571104791/973757438656401428/ojitosp.gif");
+        }
+        function remp2() {
+            document.getElementById("ojo").setAttribute("src", "https://cdn.discordapp.com/attachments/749453565571104791/973757438899658804/ojitosp.png");
+        } 
+    </script>
+    <script>
+
+
+        var x = setInterval(function () {
+            let min = 0;
+            let max = 9;
+            var r = Math.floor((Math.random() * (max - min + 1)) + min);
+            const texto = [
+                "▉▞▮▯▖▗▔▕▖▝▝▘▞▮▯▜",
+                "▄▅▆▮▯☰▐▒▒▒▓",
+                "▝▝▕▖▗▝▝▘▞▚▙▟▛▜▙",
+                "▖▗▝▝▖▗▝▝▔▝▕▖▝",
+                "▒▒▒▓▒▒▒▓▒▒▒▓░▒▒▒▒",
+                "▔▕▖▗▔▕▖▗",
+                "▁▂▃▄▅▆▇▉▆▅▄▃▂▁",
+                "□▔▕▖▣▪▫▬▭▮▀",
+                "■□▣▤▥▖▗▝▝▘▞▪▔▕▖▫▬▭▮▯▖▗",
+                "▖▗▝▝▘▞▚▜▜▚▚▙▟",
+            ];
+            const fra = texto[r]
+            ///mi dolooooooor AHHHHHH no se porque no vale .innerHTML para .getElementsByClassName, pondre que porque puede traer varios.
+            x = document.getElementsByClassName("fancybox__caption");
+            for (var i = 0; i < x.length; i++) {
+                x[i].innerText = fra;
+            }
+            //para que tenga un pie de pagina aleatorio al desplegarse
+            document.getElementById("ah").setAttribute("data-caption", fra);
+            //para que cambien el titulo
+            document.getElementById("t").innerHTML = fra;
+            document.getElementsByClassName('fancybox__caption').innerHTML = fra;
+
+
+        }, 1000);
+
+
+
+        var y = setInterval(function () {
+            let min = 0;
+            let max = 9;
+            var r = Math.floor((Math.random() * (max - min + 1)) + min);
+            const texto2 = [
+                "▉▞▮▯▖▗▔▕▖▝▝▘▞▮▯▜▓▒▒▒▓░▒▒▒▒▒▒▓▖</br>▗▜▚▇▉▆▅▄▃▫▬▭▮▯▆▇▉▆▅▄▃▋█▙▟▌▍▎▏▐░▒▓▔▕▖▗▚▙▟▛▜▝ </br>▝▘▜☲☱▚▙▟▛▜☲☱▖▜▚▗▝▝▘▞▝▁▂▃▄▅▆▇▉▆▅▄▃▂▖</br>▗▝▝▘▞▀▁▂▃▄▅▆▇▉▊▋▖▗▝▝▘▞▖▗▝▝▘▞█▌▍▎▏▐░▒▓▔▕▖▖</br>▗▉▆▙▟▅▄▃▂▁▝▝▖▗▝▝▔▕▖▗▝▉▆▅▄▜▚▃▂▁▇▉▊▋█▌▍▎▏▐░▒▝▘▞▝▚▙▟▛▜■□▣▤▆▇▉▆▅▄▃▥▦▧▨▩▪▫▬ </br> ▭▮▉▆▅▄▃▂▁▯▀▜▚▁▂▝▘▞▀▁▂▃▄▅▆▘▞▀▁▂▃▄▅</br>▝▆▇▉▊▋█▌▍▎▏▐░▒▓▔▅▖▗▝▝▕▖▗▝▝▘▞▚▙▟▛▜▙▟■□▀▁▂",
+                "▄▅▆▮▯☰▐▒▒■</br>□▣▤▥▖▗▝▝▒▓■▞▚▪▫</br>▬▭□▣▤▥▖▗▝▝■□▣▤▥▖▗▝▝▜▚□▣▤▜▉▞▚▪▫</br>▬▭▊▖▗▝▝▖▗▝▝</br>▔▝▕▖▝▝▉▆□▣▤▅▄▃▂</br>▁▋▖▗▝▝▖▗▝▝▔</br>▝▕▖▝",
+                "▝▝▕▖▗▝▝▘▞▚▙▟</br>▛▜▙▖</br>▗▝▝▘▞▚▙▟</br>▛▜■□▣▥▖▗▝▝▘▞▦▧▆</br>▇▉▆▅▄▃▨▩▪▫▬▭▮▯",
+                "▖▗</br>▝▝▖▗▝</br>▝▔▝</br>▕▖▝",
+                "▒▒▒▓▒▒▒▓▒▒▒▓░▒▒▒▒▓▒▒▒</br>▓░▒▒▒▒▒▒▓▒▒</br>▒▓░▒▒▒▒▒▒▓</br>▒▒▒▓░▒▒▒▒▒▒▓▒▒▒▓░▒▒▒▒▒▒▓▒▒▒▓░▒▒▒</br>▒▒▒▓▒</br>▒▒▓░▒▒▒▒▒▒▓▒▒</br>▒▓░▒▒▒▒▒▒▓▒▒▒▓░▒▒</br>▒▒▒▒▓▒▒▒▓░▒▒▒▒▒▒▓▒▒▒▓░▒▒▒▒</br>▒▒▓▒▒▒▓░▒▒▒▒▒▒▓▒▒</br>▒▓░▒▒▒▒▒▒",
+                "▔▕▖▗▔▕▖▗▜▚</br>▁▞▮▯▂▝▘▞▀▁▂▃▄▅▕▖▗▔</br>▕▖▗▆▘▞▀▁▂▃▄▅▝▆▇</br>▉▕▖</br>▗▔▞▮▯▕▖▗▊▋█▌▍▎▏▐░▒▓▔▅▖▗▝▝▕</br>▖▗▝▝▘▞▚▙▟▛▜▙▟■□▀▁▂",
+                "▁▂▃▄▅▆▇▉▆▅▄▃▂▁▙</br>▟▛▜▚▜▉▊▝▉▆▅▄▃▂▁▋█▌▍▎▏▐░▒▓▔▕▖▗▝▝▘▞▚▙▟▛▜■□▣▇▜▚</br>▉▅▖▗▝▝▊▋█▌▍▎▏▐░▒▇▉▔▕▖▊▮▯▖▗▔▕▖▝▝▘▞▮</br>▯▜▚▒▮▯☰☲▜▚▛▜■▚▙▟▛▜▖▗▝▝▘▞▚▙▉▆▅▄▃▂▁▟▖▗▝▝▖</br>▗▝▝▘▖▗▝▝▞▛▜▦▧▃▄▅▆▨▮▯▚▙▟▛▜▚▙▟▛▜▩▪▫</br>▬▚▙▟▛░▒▓▔▕▖▗▝▝▘▞▚▖▐▒▒▒▓▒▒▒</br>▓▒▒▒▓░▒▒▒▒▒▒▓▗▝▝</br>▙▟▖▗▝▝░▒▖▉▆▅▄▃▔▕▖▂▃▄▅▆▁▗▛▜▒▪▫▬▭</br>▁▂▇▉▆▅▄▃▂▮▯▝▀▁▂▃▄▅▆▇▉▞▮▯▖▗▔▕▖▝▝▘▞▮",
+                "□▔▕▖▣▪▝▮▯▀■□▣▤</br▥▫▬▭▮▀▖▗▝▝</br▘▝▮▯▀■□▣▪▫▬▭</br▤▥▞▚▪▫▬▭▙▟▛▪▫▬▭▙▝▮▯▀■□▣▤▥▟▜■□▅▖</br▗▝▝▪▫▬▭▮▯▅▖▗▝</br▝▅▖▗▝▝▮▯▀■□▣▤▥▖▗▝▝▘</br>▞▪▔▕▖▫▬▭▮▯▖▗",
+                "■□▣</br>▤▥▖▗▝▝▘</br>▞▪▔▕▖▫▬▭▮▯▖▗",
+                "▖▗▝▝▘▞▚▜▜▚▚▙▟</br>▗▇▉▊▋█▌▍▎▏▐░▒▚▙▟▆▇▉▊▋▛▜</br>■□▣▙▟▤▙▟▥░▒▧▨▩▪▫▬▭▙▟▮</br>▯░▒░▒▇▉▊▋█▌▍▎▏▐░▒▐▒▒▒▓▒▒▒▓▒▒▒▓░▒▒▒▒▒▒▓</br>▚▙▟▛▜☲☱░▒▓▔▕▖▗▝▝▘▞▀",
+            ];
+            const fra2 = texto2[r]
+            //para cambiar el texto
+            document.getElementById("n").innerHTML = fra2;
+        }, 500);
+
+
+    </script>
+</body>
+
+</html>
